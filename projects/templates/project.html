@@ -46,13 +46,17 @@
 
 
 <section class="prev-next">
+    {% if project.prev_project %}
     <a class="prev" href="{% url 'project' prev_project.slug %}">
         <h4>Previous project</h4>
         {{ prev_project.title }}
     </a>
+    {%endif %}
+    {% if project.next_project %}
     <a class="next" href="{% url 'project' next_project.slug %}">
         <h4>Next project</h4>
         {{ next_project.title }}
     </a>
+    {%endif %}
 </section>
 {% endblock %}

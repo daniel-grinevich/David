@@ -19,9 +19,9 @@ def project(request, slug):
     
 
     qs = Project.objects.filter(isVisible=True)
-    next_project = next_in_order(project, loop=True, qs=qs)
     prev_project = prev_in_order(project, loop=True, qs=qs)
-
+    next_project = next_in_order(project, loop=True, qs=qs)
+    
     return render(request,'project.html', {
         "project": project,
         "prev_project": prev_project,
